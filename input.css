@@ -41,17 +41,21 @@ h3{
 }
 
 .btn span {
-  @apply font-bold
+  @apply font-bold;
 }
 
 .btn:hover{
-  @apply opacity-90
+  @apply opacity-90;
 }
 
 .btn_outline{
-  @apply bg-transparent
+  @apply bg-transparent;
 }
 
 .btn_outline:hover{
-  @apply bg-yellow-500
+  @apply bg-yellow-500;
+}
+
+.popular__card:hover img{
+  @apply -top-8;
 }
