@@ -18,9 +18,9 @@ navLink.forEach(link => {
 const scrollUp = () => {
   const scrollUpBtn = document.getElementById('scroll-up');
 
-  if (this.scrollY  >= 250) {
+  if (this.scrollY >= 250) {
     scrollUpBtn.classList.remove('-bottom-1/2');
-    scrollUpBtn.classList.add('bottom-4'); 
+    scrollUpBtn.classList.add('bottom-4');
   } else {
     scrollUpBtn.classList.remove('bottom-4');
     scrollUpBtn.classList.add('-bottom-1/2');
@@ -33,10 +33,10 @@ window.addEventListener('scroll', scrollUp);
 const scrollHeader = () => {
   const header = document.getElementById('navbar');
 
-  if (this.scrollY  >= 50) {
-    header.classList.add('border-b', 'border-yellow-500'); 
-  } else {
+  if (this.scrollY >= 50) {
     header.classList.add('border-b', 'border-yellow-500');
+  } else {
+    header.classList.remove('border-b', 'border-yellow-500');
   }
 };
 
@@ -72,6 +72,29 @@ const swiper = new Swiper('.swiper', {
 });
 
 /*~~~~~~~~~~~~~~~ SCROLL SECTIONS ACTIVE LINK ~~~~~~~~~~~~~~~*/
+const activeLink = () => {
+  const sections = document.querySelectorAll('section');
+  const navbarLinks = document.querySelectorAll('.nav-link');
 
+  let current = 'home';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    
+    if (this.scrollY >= sectionTop - 60) {
+      current = section.getAttribute('id')
+    }
+  });
+
+  navbarLinks.forEach(item => {
+      item.classList.remove('active');
+      
+      if (item.href.includes(current)) {
+        item.classList.add('active');
+      }
+    });
+};
+
+window.addEventListener("scroll", activeLink)
 
 /*~~~~~~~~~~~~~~~ SCROLL REVEAL ANIMATION ~~~~~~~~~~~~~~~*/
