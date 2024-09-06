@@ -80,21 +80,42 @@ const activeLink = () => {
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    
+
     if (this.scrollY >= sectionTop - 60) {
       current = section.getAttribute('id')
     }
   });
 
   navbarLinks.forEach(item => {
-      item.classList.remove('active');
-      
-      if (item.href.includes(current)) {
-        item.classList.add('active');
-      }
-    });
+    item.classList.remove('active');
+
+    if (item.href.includes(current)) {
+      item.classList.add('active');
+    }
+  });
 };
 
 window.addEventListener("scroll", activeLink)
 
 /*~~~~~~~~~~~~~~~ SCROLL REVEAL ANIMATION ~~~~~~~~~~~~~~~*/
+
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  scale: 0.9,
+  easing: 'ease-in-out',
+  viewFactor: 0.2,
+  duration: 2500,
+  reset: true,
+});
+
+sr.reveal('.home__data, .about__top, .popular__top, .review__top, .review__swipper, .footer__icon, .footer__content, .copy__right');
+sr.reveal('.home__image', { delay: 500, scale: 0.5 });
+
+sr.reveal('.services__card, .popular__card', { interval: 100 });
+
+sr.reveal('.about__leaf', { delay: 1000, origin: "right" });
+sr.reveal('.popular__leaf, .footer__floral', { delay: 1000, origin: "left" });
+
+sr.reveal('.about__item__1-content, .about__item__2-img', { origin: "right" })
+sr.reveal('.about__item__2-content, .about__item__1-img', { origin: "left" })
