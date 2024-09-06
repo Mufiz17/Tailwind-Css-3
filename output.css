@@ -604,6 +604,10 @@ video {
   position: relative;
 }
 
+.-bottom-1\/2{
+  bottom: -50%;
+}
+
 .-left-5{
   left: -1.25rem;
 }
@@ -678,14 +682,6 @@ video {
 
 .top-1\/2{
   top: 50%;
-}
-
-.bottom-1\/2{
-  bottom: 50%;
-}
-
-.-bottom-1\/2{
-  bottom: -50%;
 }
 
 .-z-10{
@@ -961,6 +957,11 @@ video {
 .border-green-900{
   --tw-border-opacity: 1;
   border-color: rgb(20 83 45 / var(--tw-border-opacity));
+}
+
+.border-yellow-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(234 179 8 / var(--tw-border-opacity));
 }
 
 .bg-green-700{
